@@ -35,15 +35,34 @@ class Publication
      */
     private $description;
 
+    /**
+     * Related category
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setCategory($var)
+    {
+        $this->category = $var;
+
+        return $this;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
     }
 
     /**
@@ -62,7 +81,7 @@ class Publication
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -85,7 +104,7 @@ class Publication
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
