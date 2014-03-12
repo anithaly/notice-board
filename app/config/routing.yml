@@ -1,0 +1,5 @@
+noticeboard_publication:
+    resource: "@NoticeboardPublicationBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
